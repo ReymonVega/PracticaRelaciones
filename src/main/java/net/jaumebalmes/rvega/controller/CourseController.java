@@ -25,13 +25,15 @@ public class CourseController {
 		return courseRepo.findById(id).get();
 	}
 	
-	
-	
+
 	
 	@GetMapping("course")
 	public Iterable<Course> getCourses() {
 		
 		return courseRepo.findAll();
 	}
+	
+
+
 	
 }
