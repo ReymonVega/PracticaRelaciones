@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Course {
@@ -14,6 +17,10 @@ public class Course {
 	
 	private String title;
 	
+	@OneToOne(mappedBy= "course")	
+	private CourseMaterial courseMaterial;
+	
+	@JsonIgnore
 	public Course() {
 		
 	}
