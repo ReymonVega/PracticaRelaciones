@@ -18,25 +18,26 @@ public class Course {
 	private String title;
 	
 	@OneToOne(mappedBy= "course")	
-	private CourseMaterial courseMaterial;
-	
 	@JsonIgnore
+	private CourseMaterial courseMaterial;
+
 	public Course() {
-		
+		super();
 	}
 
-	public Course(String title, long id) {
+	public Course(long id, String title, CourseMaterial courseMaterial) {
 		super();
-		this.title = title;
 		this.id = id;
+		this.title = title;
+		this.courseMaterial = courseMaterial;
 	}
-	
+
 	public long getId() {
 		return id;
 	}
-	
-	public long setId() {
-		return id;
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -47,11 +48,20 @@ public class Course {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Course [id=" + id + ", title=" + title + "]";
+	public CourseMaterial getCourseMaterial() {
+		return courseMaterial;
 	}
 
+	public void setCourseMaterial(CourseMaterial courseMaterial) {
+		this.courseMaterial = courseMaterial;
+	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", title=" + title + ", courseMaterial=" + courseMaterial + "]";
+	}
+	
+	
 	
 	
 	
