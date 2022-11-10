@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+/*
 import javax.persistence.OneToOne;
-
+*/
 @Entity
 public class CourseMaterial {
 	
@@ -16,8 +18,10 @@ public class CourseMaterial {
 	
 	private long id;
 	public String url;
-	
-	@OneToOne 	
+	/*
+	@OneToOne
+	*/
+	@ManyToOne
 	private Course course;
 
 	 public CourseMaterial() {
