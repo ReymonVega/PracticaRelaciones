@@ -11,7 +11,6 @@ import net.jaumebalmes.rvega.repos.CourseMaterialRepository;
 
 @RestController
 @RequestMapping("api")
-
 public class CourseMaterialController {
 	
 	@Autowired
